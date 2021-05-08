@@ -8,6 +8,7 @@ const convertCurrency = async () => {
     try {
         const response = await fetch('http://api.currencylayer.com/list?access_key=6b543e9294a71d26a6606f5449cf71a6');
         const res = await response.json();
+        console.log(res)
         let names = res.currencies;
         let currencies = Object.entries(names);
 
@@ -28,7 +29,7 @@ const convertCurrency = async () => {
 
 
     } catch {
-        console.log(e=> `fatal ${e}`)
+        console.log('Error: Failed to fetch the API')
     }
 }
 
